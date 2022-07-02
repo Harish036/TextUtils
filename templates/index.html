@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Django TextUtils</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">TextUtils</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+     <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</nav>
+<!--<div class="alert alert-success" role="alert">-->
+<!--  A simple success alert—check it out!-->
+<!--</div>-->
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to textutils</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="container">
+    <form action="/analyze" method="post"> {% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label"> Enter the text here: </label>
+  <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"  name="removepunc">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove the punctuations</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" name="capitalize" id="flexSwitchCheckDefault2">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Capitalize the string</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" name="charcount" id="flexSwitchCheckDefault3">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Count the characters</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" name="newlineremove" id="flexSwitchCheckDefault4">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove the newlines</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" name="extraspaceremover" id="flexSwitchCheckDefault5">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove the extra spaces</label>
+</div>
+    <button type="submit" class="btn btn-dark mt-2">Analyze text</button>
+</form>
+</div>
+
+</body>
+</html>
